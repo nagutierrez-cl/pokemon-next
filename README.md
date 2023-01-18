@@ -13,3 +13,7 @@ Material-ui (v5.11.4), Axios (v1.2.2), ChartJs (v4.1.2)
 ## Demo
 
 https://pokemon-nagutierrez-cl.vercel.app
+
+## OG Meta Tags
+
+![App Screenshot](https://pokemon-nagutierrez-cl.vercel.app/ogmetatags.png)
