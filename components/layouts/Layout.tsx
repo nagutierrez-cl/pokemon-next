@@ -13,32 +13,46 @@ interface Props {
 const origin = (typeof window === 'undefined') ? '' : window.location.origin
 
 export const Layout: FC<Props> = ({ children, title }) => {
-  return (
-    <>
-      <Head>
-        <title>{ title || 'Pokemon App' }</title>
-        <meta name="author" content="nagutierrez-cl" />
-        <meta name="description" content={`Información sobre el pokemon ${ title }`} />
-        <meta name="keywords" content={`${ title }. pokemon, pokedex`} />
+    return (
+        <>
+            <Head>
+                <title>{ title || 'Pokemon App' }</title>
+                <meta name="author" content="nagutierrez-cl" />
+                
+                {
+                    title
+                        ? 
+                            <>
+                                <meta name="description" content={`Info about ${ title }`} />
+                                <meta property="og:title" content={`Info about ${ title }`}/>
+                                <meta property="og:description" content={`This page is about ${ title }`} />
+                            </>
+                        : 
+                            <>
+                                <meta name="description" content={`Info about Pokémons`} />
+                                <meta property="og:title" content={`Info about Pokémons`}/>
+                                <meta property="og:description" content={`This page is about Pokémons`} />
+                            </>
+                }
 
-        <meta property="og:title" content={`Información sobre ${ title }`}/>
-        <meta property="og:description" content={`Esta es la página sobre ${ title }`} />
-        <meta property="og:image" content={`${ origin }/img/banner.png`} />
-      </Head>
+                <meta name="keywords" content={`${ title }. pokemon, pokedex`} />
 
-      <Navbar />
+                <meta property="og:image" content={`${ origin }/banner.png`} />
+            </Head>
 
-      <Box sx={{ height: '70px' }} />
+            <Navbar />
 
-      <main style={{
-        backgroundColor: 'black',
-        padding: '16px 0',
-        minHeight: 'calc(100vh - 155px)'
-      }}>
-        { children }
-      </main>
+            <Box sx={{ height: '70px' }} />
 
-      <Footer />
-    </>
-  )
+            <main style={{
+                backgroundColor: 'black',
+                padding: '16px 0',
+                minHeight: 'calc(100vh - 155px)'
+            }}>
+                { children }
+            </main>
+
+            <Footer />
+        </>
+    )
 }
