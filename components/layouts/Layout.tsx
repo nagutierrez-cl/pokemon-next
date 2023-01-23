@@ -24,18 +24,18 @@ export const Layout: FC<Props> = ({ children, title }) => {
                         ? 
                             <>
                                 <meta name="description" content={`Info about ${ title }`} />
-                                <meta property="og:title" content={`Info about ${ title }`}/>
-                                <meta property="og:description" content={`This page is about ${ title }`} />
+                                <meta name="keywords" content={`${ title }. pokemon, pokedex, pokémon, nagutierrez-cl, nagutierrez, pokemonapp`} />
+                                <meta property="og:title" content={`${ title }'s page`}/>
+                                <meta property="og:description" content={`This page contains info about ${ title }, let's take a look`} />
                             </>
                         : 
                             <>
-                                <meta name="description" content={`Info about Pokémons`} />
-                                <meta property="og:title" content={`Info about Pokémons`}/>
-                                <meta property="og:description" content={`This page is about Pokémons`} />
+                                <meta name="description" content={`Pokémon home page`} />
+                                <meta name="keywords" content={`pokemon, pokedex, pokémon, nagutierrez-cl, nagutierrez, pokemonapp`} />
+                                <meta property="og:title" content={`Pokémon home page`}/>
+                                <meta property="og:description" content={`This site contains info about all the pokémons. Search your favorite!`} />
                             </>
                 }
-
-                <meta name="keywords" content={`${ title }. pokemon, pokedex`} />
 
                 <meta property="og:image" content={`${ origin }/banner.png`} />
             </Head>
